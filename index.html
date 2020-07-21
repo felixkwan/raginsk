@@ -59,7 +59,7 @@
 <meta name="color:Post Link Text" content="#FFFFFF"/>
 <meta name="color:Post Link Text Hover" content="#1A1A1A"/>
 <meta name="color:Post Link Bk" content="#212121"/>
-<meta name="color:Post Link Bk Hover" content="a77dc2" />
+<meta name="color:Post Link Bk Hover" content="#a77dc2" />
 <meta name="color:Post Answer White" content="#FFFFFF"/>
 <meta name="color:Post Answer Grey" content="#EFEFEF"/>
 
@@ -1993,90 +1993,6 @@ input {
 <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
-<script>
-
-$(window).on("load", function () {
-    
-    var elem = document.querySelector('.grid');
-    var imgLoad = imagesLoaded( elem );
-    
-    var iso = new Isotope( '.grid' , {
-      // Isotope options...
-      itemSelector: 'none',
-      masonry: {
-        columnWidth: '.grid-sizer',
-        gutter: '.gutter-sizer',
-      },
-      visibleStyle: {
-        transform: 'translateY(0)',
-        opacity: 1 },
-      hiddenStyle: { 
-        transform: 'translateY(100px)',
-        opacity: 0 },
-      percentPosition: true,
-      stagger: 150,
-      transitionDuration: '0.55s',
-    });
-    
-    imagesLoaded( elem, function() {
-      console.log('DONE  - all images have been successfully loaded');
-      elem.classList.remove('are-images-unloaded');
-      var items = elem.querySelectorAll('.grid-item');
-      iso.options.itemSelector = '.grid-item';
-      iso.appended( items );
-    });
-
-    
-    var infScroll = new InfiniteScroll( elem, {
-      path: '.next-page',
-      append: '.grid-item',
-      outlayer: iso,
-      status: '.page-load-status',
-      prefill: true,
-    });
-});
-
-$(document).ready( function() {
-
-     const btn = document.querySelector('.toggle-btn');
-
-     btn.addEventListener('click', function (event) {
-        const navbar = document.querySelector('.navbar-link');
-        const main = document.querySelector("html");
-        const scrollWrap = document.querySelector(".scroll-top-wrap");
-        navbar.classList.toggle('is-active');
-        this.classList.toggle('is-active');
-        console.log('toggle-nav.');
-        main.classList.toggle('lock');
-        scrollWrap.classList.toggle('lock');
-     });
-     
-     const scrollBtn = document.getElementById('scroll-top');
-     
-     window.onscroll = function() {
-       scrollFunction();  
-     };
-     
-     function scrollFunction() {
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        scrollBtn.classList.remove('hide');
-      } else {
-        scrollBtn.classList.add('hide');
-      }
-    };
-    
-    scrollBtn.addEventListener('click', function(event) {
-       scrollTop(); 
-    });
-    
-    function scrollTop() {
-        window.scrollTo({
-            top: 0, 
-            behavior: 'smooth'});
-        console.log('scroll to top');
-    }
-     
-});
-</script>
+<script src="https://static.tumblr.com/mravxd7/W9Rqdtb61/main.js"></script>
 
 </html>
